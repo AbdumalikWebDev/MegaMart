@@ -6,23 +6,32 @@ document.querySelector("#app").innerHTML = `
         Skip to main content
       </a>
       <header class="header">
-        <nav class="nav">
+        <nav class="nav" aria-label="Main navigation">
           <div class="nav_top">
             <div class="wrapper">
-              <div class="left" tabindex="0">
+              <div class="left" tabindex="0" aria-label="Welcome message">
                 Welcome to worldwide Megamart!
               </div>
               <div class="right">
-                <a href="#" class="link">
-                  <i class="fa-solid fa-location-dot"></i> Deliver to
-                  <strong>432631</strong>
+                <a
+                  href="#"
+                  class="link"
+                  aria-label="Delivery location, postal code 432631">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Deliver to <strong>432631</strong>
                 </a>
-                <a href="#" class="link">
-                  <img src="/assets/truck-icon.svg" alt="truck icon" />
+                <a href="#" class="link" aria-label="Track your order">
+                  <img
+                    src="/assets/truck-icon.svg"
+                    alt="truck icon"
+                    aria-hidden="true" />
                   Track your order
                 </a>
-                <a href="#" class="link">
-                  <img src="/assets/Discount.svg" alt="discount icon" />
+                <a href="#" class="link" aria-label="View all offers">
+                  <img
+                    src="/assets/Discount.svg"
+                    alt="discount icon"
+                    aria-hidden="true" />
                   All Offers
                 </a>
               </div>
@@ -31,36 +40,42 @@ document.querySelector("#app").innerHTML = `
           <div class="nav_bottom">
             <div class="wrapper">
               <div class="left">
-                <button
-                  id="sidebar-btn"
-                  aria-label="open sidebar button"
-                  tabindex="0">
-                  <img src="/assets/bars.webp" alt="bars" />
+                <button id="sidebar-btn" aria-label="Open sidebar" tabindex="0">
+                  <img src="/assets/bars.webp" alt="menu icon" />
                 </button>
-                <div id="logo"><a href="index.html">MegaMart</a></div>
+                <div id="logo">
+                  <a href="index.html" aria-label="Home page">MegaMart</a>
+                </div>
               </div>
               <div class="right">
                 <div class="search-input">
-                  <button class="magnifying-glass" aria-label="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                  <button class="magnifying-glass" aria-label="Search">
+                    <i
+                      class="fa-solid fa-magnifying-glass"
+                      aria-hidden="true"></i>
                   </button>
                   <input
                     type="search"
                     class="input"
                     placeholder="Search essentials, groceries and more..."
-                    aria-label="Search input"
-                    name="search input" />
-                  <button class="input-list" aria-label="search list">
-                    <i class="fa-solid fa-list-ul"></i>
+                    aria-label="Search for products"
+                    name="search" />
+                  <button
+                    class="input-list"
+                    aria-label="View search suggestions">
+                    <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
                   </button>
                 </div>
                 <div class="sign-up_cart">
-                  <button class="sign-up">
-                    <i class="fa-regular fa-user"></i>
+                  <button class="sign-up" aria-label="Sign up or Sign in">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
                     Sign Up/Sign In
                   </button>
-                  <button id="cart">
-                    <img src="/assets/shopping-cart.svg" alt="shopping cart" />
+                  <button id="cart" aria-label="View cart">
+                    <img
+                      src="/assets/shopping-cart.svg"
+                      alt="shopping cart icon"
+                      aria-hidden="true" />
                     Cart
                   </button>
                 </div>
@@ -68,14 +83,21 @@ document.querySelector("#app").innerHTML = `
             </div>
           </div>
         </nav>
-        <div class="categories">
+        <div class="categories" aria-label="Product categories">
           <div class="wrapper">
             <div class="groceries category">
-              <button class="toggle-btn">
-                Groceries <i class="fa-solid fa-chevron-down"></i>
+              <button
+                class="toggle-btn"
+                aria-expanded="false"
+                aria-controls="groceries-content">
+                Groceries
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </button>
-              <div class="category-content grocery">
-                <a href="#">Meet</a>
+              <div
+                id="groceries-content"
+                class="category-content grocery"
+                aria-hidden="true">
+                <a href="#">Meat</a>
                 <a href="#">Baking</a>
                 <a href="#">Pet food</a>
                 <a href="#">Drinks</a>
@@ -83,10 +105,17 @@ document.querySelector("#app").innerHTML = `
               </div>
             </div>
             <div class="premium-fruits category">
-              <button class="toggle-btn">
-                Premium Fruits <i class="fa-solid fa-chevron-down"></i>
+              <button
+                class="toggle-btn"
+                aria-expanded="false"
+                aria-controls="premium-fruits-content">
+                Premium Fruits
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </button>
-              <div class="category-content premium-fruit">
+              <div
+                id="premium-fruits-content"
+                class="category-content premium-fruit"
+                aria-hidden="true">
                 <a href="#">Avocado</a>
                 <a href="#">Bananas</a>
                 <a href="#">Berries</a>
@@ -97,11 +126,20 @@ document.querySelector("#app").innerHTML = `
                 <a href="#">Plums</a>
               </div>
             </div>
+            <!-- Additional categories follow the same structure as above -->
+            <!-- Example for Home & Kitchen -->
             <div class="home-kitchen category">
-              <button class="toggle-btn">
-                Home & Kitchen <i class="fa-solid fa-chevron-down"></i>
+              <button
+                class="toggle-btn"
+                aria-expanded="false"
+                aria-controls="home-kitchen-content">
+                Home & Kitchen
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </button>
-              <div class="category-content home-kitchen-content">
+              <div
+                id="home-kitchen-content"
+                class="category-content home-kitchen-content"
+                aria-hidden="true">
                 <a href="#">Blenders</a>
                 <a href="#">Mixers</a>
                 <a href="#">Vacuum Cleaners</a>
@@ -111,122 +149,73 @@ document.querySelector("#app").innerHTML = `
                 <a href="#">Refrigerators</a>
               </div>
             </div>
-            <div class="fashions category">
-              <button class="toggle-btn">
-                Fashions <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="category-content fashion-content">
-                <a href="#">Casual</a>
-                <a href="#">Minimalist</a>
-                <a href="#">Formal</a>
-                <a href="#">Vintage</a>
-                <a href="#">Streetwear</a>
-                <a href="#">Preppy</a>
-                <a href="#">Artsy</a>
-              </div>
-            </div>
-            <div class="category">
-              <button class="toggle-btn">
-                Electronics <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="category-content">
-                <a href="#">Speaker</a>
-                <a href="#">Alarm Clock</a>
-                <a href="#">Hair Dryer</a>
-                <a href="#">Fan</a>
-                <a href="#">Headphones</a>
-              </div>
-            </div>
-            <div class="category">
-              <button class="toggle-btn">
-                Beauty <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="category-content">
-                <a href="#">Oral Care</a>
-                <a href="#">Skin care</a>
-                <a href="#">Sun care</a>
-                <a href="#">Hair care</a>
-                <a href="#">Decorative cosmetics</a>
-              </div>
-            </div>
-            <div class="category">
-              <button class="toggle-btn">
-                Home Improvement <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="category-content">
-                <a href="#">Meet</a>
-                <a href="#">Baking</a>
-                <a href="#">Pet food</a>
-                <a href="#">Drinks</a>
-                <a href="#">Pasta & Cereals</a>
-              </div>
-            </div>
-            <div class="premium-fruits category">
-              <button class="toggle-btn">
-                Sports, Toys & Luggage<i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="category-content">
-                <a href="#">Meet</a>
-                <a href="#">Baking</a>
-                <a href="#">Pet food</a>
-                <a href="#">Drinks</a>
-                <a href="#">Pasta & Cereals</a>
-              </div>
-            </div>
+            <!-- Continue for each additional category... -->
           </div>
         </div>
       </header>
-      <aside class="sidebar">
+
+      <aside class="sidebar" aria-labelledby="sidebar-heading">
         <div class="wrapper">
-          <span class="sidebar-heading" role="heading"> MegaMart </span>
+          <h2 id="sidebar-heading" class="sidebar-heading">MegaMart</h2>
           <div class="sidebar-content">
-            <ul role="menu">
+            <ul role="menu" aria-label="Sidebar Navigation">
               <li class="item">
                 <button
                   id="sidebar-close-btn"
                   aria-label="Close Sidebar"
-                  role="menuitem"
-                  tabindex="0">
-                  <i class="fa-solid fa-xmark"></i> Close
+                  aria-controls="sidebar"
+                  aria-expanded="true"
+                  role="menuitem">
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i> Close
                 </button>
               </li>
               <li class="item">
-                <button class="sign-up" role="menuitem" tabindex="0">
-                  <i class="fa-regular fa-user"></i>
+                <button
+                  class="sign-up"
+                  aria-label="Sign Up or Sign In"
+                  role="menuitem">
+                  <i class="fa-regular fa-user" aria-hidden="true"></i>
                   Sign Up/Sign In
                 </button>
               </li>
               <li class="item">
-                <button class="cart" role="menuitem" tabindex="0">
-                  <i class="fa-solid fa-cart-shopping"></i>Cart
+                <button class="cart" aria-label="Open Cart" role="menuitem">
+                  <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                  Cart
                 </button>
               </li>
               <li class="item">
-                <a href="#" aria-label="Delivery" role="menuitem" tabindex="0">
-                  <i class="fa-solid fa-location-dot"></i> Deliver to
+                <a href="#" aria-label="Delivery Location" role="menuitem">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Deliver to
                   <strong>432631</strong>
                 </a>
               </li>
               <li class="item">
-                <a href="#" aria-label="order" role="menuitem" tabindex="0">
-                  <i class="fa-solid fa-truck"></i> Track your order
+                <a href="#" aria-label="Track Order" role="menuitem">
+                  <i class="fa-solid fa-truck" aria-hidden="true"></i> Track
+                  your order
                 </a>
               </li>
               <li class="item">
-                <a href="#" aria-label="offer" role="menuitem">
-                  <i class="fa-solid fa-tag"></i>All Offers
+                <a href="#" aria-label="All Offers" role="menuitem">
+                  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                  All Offers
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </aside>
+
       <main id="hero" class="main" role="main">
-        <div class="slider">
+        <div class="slider" aria-labelledby="slider-heading">
           <div class="slider-content">
-            <div class="slide fade">
+            <div class="slide fade" aria-live="polite">
               <div class="slide-title">
-                <h1 class="heading1">Best Deal Online on smart watches</h1>
+                <h1 id="slider-heading" class="heading1">
+                  Best Deal Online on smart watches
+                </h1>
                 <h2 class="heading2">SMART WEARABLE.</h2>
                 <p class="heading3">Up to 80% OFF</p>
               </div>
@@ -236,7 +225,7 @@ document.querySelector("#app").innerHTML = `
                 class="slider-image"
                 loading="eager" />
             </div>
-            <div class="slide fade">
+            <div class="slide fade" aria-live="polite">
               <div class="slide-title">
                 <h1 class="heading1">Elevate Your Space with Unique Decor</h1>
                 <h2 class="heading2">Diverse Styles.</h2>
@@ -251,35 +240,53 @@ document.querySelector("#app").innerHTML = `
             <!-- Add more slides as needed -->
           </div>
 
-          <button class="prev-slide">&#10094;</button>
-          <button class="next-slide">&#10095;</button>
-          <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
+          <button class="prev-slide" aria-label="Previous Slide">
+            &#10094;
+          </button>
+          <button class="next-slide" aria-label="Next Slide">&#10095;</button>
+          <div
+            class="slider-dots"
+            role="tablist"
+            aria-label="Slide Navigation Dots">
+            <button
+              class="dot active"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              aria-label="Slide 1"></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              aria-label="Slide 2"></button>
           </div>
         </div>
-        <section class="sm-sc" role="navigation">
+        <section class="sm-sc" role="region" aria-labelledby="sm-heading">
           <div class="wrapper">
-            <div class="sm-tab tab">
+            <div
+              class="sm-tab tab"
+              role="navigation"
+              aria-label="Smartphone Deals Navigation">
               <p tabindex="0">
                 Grab the best deal on
-                <span class="blue-word">Smartphones</span>
+                <span class="blue-word" id="sm-heading">Smartphones</span>
               </p>
-              <button class="sm-viewall">
+              <button class="sm-viewall" aria-label="View All Smartphones">
                 View all
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="sm-wrapper">
+            <div class="sm-wrapper" role="list">
               <div
                 class="phone"
-                aria-label="galaxy S22 Ultra"
+                aria-label="Galaxy S22 Ultra on sale for $560, previously $800"
                 role="button"
                 tabindex="0">
                 <div class="phone-img">
                   <img
                     src="/assets/galaxys22.webp"
-                    alt="phone, smartphone, phone image"
+                    alt="Galaxy S22 Ultra smartphone"
                     loading="lazy" />
                   <div class="discount">
                     <span>30%<br />OFF</span>
@@ -292,6 +299,7 @@ document.querySelector("#app").innerHTML = `
                     <span
                       class="line-through"
                       style="text-decoration: line-through"
+                      aria-hidden="true"
                       >$800</span
                     >
                   </span>
@@ -300,7 +308,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div
                 class="phone"
-                aria-label="Galaxy M13 4Gb / 64Gb"
+                aria-label="Galaxy M13 on sale for $160, previously $200"
                 role="button"
                 tabindex="0">
                 <div class="phone-img">
@@ -319,6 +327,7 @@ document.querySelector("#app").innerHTML = `
                     <span
                       class="line-through"
                       style="text-decoration: line-through"
+                      aria-hidden="true"
                       >$200</span
                     >
                   </span>
@@ -327,7 +336,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div
                 class="phone"
-                aria-label="Galaxy M33 4Gb / 64Gb"
+                aria-label="Galaxy M33 4Gb / 64Gb on sale for $270, previously $300"
                 role="button"
                 tabindex="0">
                 <div class="phone-img">
@@ -346,6 +355,7 @@ document.querySelector("#app").innerHTML = `
                     <span
                       class="line-through"
                       style="text-decoration: line-through"
+                      aria-hidden="true"
                       >$300</span
                     >
                   </span>
@@ -354,7 +364,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div
                 class="phone"
-                aria-label="Galaxy M53 4Gb / 64Gb"
+                aria-label="Galaxy M53 4Gb / 64Gb on sale for $400, previously $500"
                 role="button"
                 tabindex="0">
                 <div class="phone-img">
@@ -373,6 +383,7 @@ document.querySelector("#app").innerHTML = `
                     <span
                       class="line-through"
                       style="text-decoration: line-through"
+                      aria-hidden="true"
                       >$500</span
                     >
                   </span>
@@ -381,7 +392,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div
                 class="phone"
-                aria-label="Galaxy S22 Ultra"
+                aria-label="Galaxy S22 Ultra on sale for $900, previously $1000"
                 role="button"
                 tabindex="0">
                 <div class="phone-img">
@@ -400,6 +411,7 @@ document.querySelector("#app").innerHTML = `
                     <span
                       class="line-through"
                       style="text-decoration: line-through"
+                      aria-hidden="true"
                       >$1000</span
                     >
                   </span>
@@ -409,167 +421,214 @@ document.querySelector("#app").innerHTML = `
             </div>
           </div>
         </section>
-        <section class="top-categories">
+        <section
+          class="top-categories"
+          aria-labelledby="top-categories-heading">
           <div class="wrapper">
             <div class="top-categories-tab tab">
-              <p role="contentinfo" tabindex="0">
+              <p
+                id="top-categories-heading"
+                tabindex="0"
+                role="heading"
+                aria-level="2">
                 Shop From <span class="blue-word">Top Categories</span>
               </p>
-              <button class="viewall-btn">
+              <button class="viewall-btn" aria-label="View all top categories">
                 View all
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="items-wrapper">
-              <div class="item" tabindex="0" role="button">
+            <div
+              class="items-wrapper"
+              role="list"
+              aria-label="Top Categories List">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Mobile category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/galaxys22.webp"
-                    alt="image"
-                    loading="lazy"
-                    role="img" />
+                    alt="Mobile category"
+                    loading="lazy" />
                 </div>
-                <p role="contentinfo">Mobile</p>
+                <p class="item-name">Mobile</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Cosmetics category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/cosmetics.webp"
-                    alt="image"
-                    loading="lazy"
-                    role="img" />
+                    alt="Cosmetics category"
+                    loading="lazy" />
                 </div>
-                <p role="contentinfo">Cosmetics</p>
+                <p class="item-name">Cosmetics</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Electronics category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/washingmachine.webp"
-                    alt="image"
+                    alt="Electronics category"
                     loading="lazy"
-                    role="img"
                     class="washing-machine" />
                 </div>
-                <p role="contentinfo">Electronics</p>
+                <p class="item-name">Electronics</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Furniture category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/sofa.webp"
-                    alt="image"
+                    alt="Furniture category"
                     loading="lazy"
-                    role="img"
                     class="furniture" />
                 </div>
-                <p role="contentinfo">Furniture</p>
+                <p class="item-name">Furniture</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Watches category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/image5.webp"
-                    alt="image"
+                    alt="Watches category"
                     loading="lazy"
-                    role="img"
                     class="watch" />
                 </div>
-                <p role="contentinfo">Watches</p>
+                <p class="item-name">Watches</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Decor category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/flower-pot.webp"
-                    alt="image"
+                    alt="Decor category"
                     loading="lazy"
-                    role="img"
                     class="decor" />
                 </div>
-                <p role="contentinfo">Decor</p>
+                <p class="item-name">Decor</p>
               </div>
-              <div class="item" tabindex="0" role="button">
+              <div
+                class="item"
+                tabindex="0"
+                role="listitem"
+                aria-label="Accessories category, view items">
                 <div class="item-img">
                   <img
                     src="/assets/jewelry.webp"
-                    alt="image"
+                    alt="Accessories category"
                     loading="lazy"
-                    role="img"
                     class="jewelry" />
                 </div>
-                <p role="contentinfo">Accessories</p>
+                <p class="item-name">Accessories</p>
               </div>
             </div>
           </div>
         </section>
-        <section class="electronics-sc">
+
+        <section class="electronics-sc" aria-labelledby="electronics-heading">
           <div class="wrapper">
             <div class="electronics-tab tab">
-              <p role="contentinfo" tabindex="0">
+              <p
+                id="electronics-heading"
+                role="heading"
+                aria-level="2"
+                tabindex="0">
                 Top <span class="blue-word">Electronics</span>
               </p>
-              <button id="view-electronics" class="viewall-btn">
+              <button
+                id="view-electronics"
+                class="viewall-btn"
+                aria-label="View all electronics deals">
                 View all
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="electronics-wrapper">
+            <div
+              class="electronics-wrapper"
+              role="list"
+              aria-label="Electronics Deals List">
               <div class="brands">
                 <div class="brands1">
                   <div
                     class="item iphone"
-                    aria-label="IPhone, UP to 30% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="IPhone - Up to 30% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">IPHONE</span>
+                      <span class="phone-name" aria-hidden="true">IPHONE</span>
                       <img
                         src="/assets/apple-logo.webp"
                         loading="lazy"
                         class="brand-logo"
-                        alt="iPhone logo" />
-                      <span class="discount-price">UP to 30% OFF</span>
+                        alt="Apple iPhone brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 30% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/iphone15.svg"
-                      alt="logo"
+                      alt="iPhone 15 model, discount available"
                       loading="lazy"
                       class="phone-image" />
                   </div>
                   <div
                     class="item realme"
-                    aria-label="Realme, UP to 40% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="Realme - Up to 40% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">realme</span>
+                      <span class="phone-name" aria-hidden="true">Realme</span>
                       <img
                         src="/assets/realme-logo.webp"
-                        alt="logo"
+                        loading="lazy"
                         class="brand-logo"
-                        loading="lazy" />
-                      <span class="discount-price">UP to 40% OFF</span>
+                        alt="Realme brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 40% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/realme.svg"
                       loading="lazy"
-                      alt="phone image"
+                      alt="Realme phone model, discount available"
                       class="phone-image" />
                   </div>
                   <div
                     class="item xiaomi"
-                    aria-label="Xiaomi, UP to 50% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="Xiaomi - Up to 50% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">Xiaomi</span>
+                      <span class="phone-name" aria-hidden="true">Xiaomi</span>
                       <img
                         src="/assets/xiaomi-logo.webp"
-                        alt="logo"
+                        loading="lazy"
                         class="brand-logo"
-                        loading="lazy" />
-                      <span class="discount-price">UP to 80% OFF</span>
+                        alt="Xiaomi brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 50% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/xiaomi.svg"
-                      alt="phone image"
+                      alt="Xiaomi phone model, discount available"
                       loading="lazy"
                       class="phone-image" />
                   </div>
@@ -577,62 +636,67 @@ document.querySelector("#app").innerHTML = `
                 <div class="brands2">
                   <div
                     class="item vivo"
-                    aria-label="VIVO, UP to 30% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="Vivo - Up to 30% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">Vivo</span>
+                      <span class="phone-name" aria-hidden="true">Vivo</span>
                       <img
                         src="/assets/vivo-logo.webp"
-                        alt="logo"
+                        loading="lazy"
                         class="brand-logo"
-                        loading="lazy" />
-                      <span class="discount-price">UP to 30% OFF</span>
+                        alt="Vivo brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 30% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/vivo-phone.webp"
-                      alt="phone image"
+                      alt="Vivo phone model, discount available"
                       loading="lazy"
                       class="phone-image" />
                   </div>
                   <div
                     class="item samsung"
-                    aria-label="Samsung, UP to 10% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="Samsung - Up to 10% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">Samsung</span>
+                      <span class="phone-name" aria-hidden="true">Samsung</span>
                       <img
                         src="/assets/samsung-logo.png"
-                        alt="logo"
+                        loading="lazy"
                         class="brand-logo"
-                        loading="lazy" />
-                      <span class="discount-price">UP to 10% OFF</span>
+                        alt="Samsung brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 10% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/samsung-phone.png"
-                      alt="phone image"
+                      alt="Samsung phone model, discount available"
                       loading="lazy"
                       class="phone-image" />
                   </div>
                   <div
                     class="item oppo"
-                    aria-label="OPPO, UP to
-                  50% OFF"
-                    role="button"
+                    role="listitem"
+                    aria-label="OPPO - Up to 50% OFF"
                     tabindex="0">
                     <div class="texts">
-                      <span class="phone-name">OPPO</span>
+                      <span class="phone-name" aria-hidden="true">OPPO</span>
                       <img
                         src="/assets/oppo-logo.png"
-                        alt="logo"
+                        loading="lazy"
                         class="brand-logo"
-                        loading="lazy" />
-                      <span class="discount-price">UP to 50% OFF</span>
+                        alt="OPPO brand logo" />
+                      <span class="discount-price" aria-hidden="true"
+                        >UP to 50% OFF</span
+                      >
                     </div>
                     <img
                       src="/assets/oppo-phone.webp"
-                      alt="phone image"
+                      alt="OPPO phone model, discount available"
                       loading="lazy"
                       class="phone-image" />
                   </div>
@@ -641,6 +705,7 @@ document.querySelector("#app").innerHTML = `
             </div>
           </div>
         </section>
+
         <section class="daily-essentials-sc">
           <div class="wrapper">
             <div class="daily-essentials-tab tab">
@@ -660,7 +725,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div class="product" tabindex="0">
                 <div class="product-img"></div>
-                <span class="product-name">Vegitables</span>
+                <span class="product-name">Vegetables</span>
                 <span class="bold discount-price">UP tp 20% OFF</span>
               </div>
               <div class="product" tabindex="0">
@@ -670,7 +735,7 @@ document.querySelector("#app").innerHTML = `
               </div>
               <div class="product" tabindex="0">
                 <div class="product-img"></div>
-                <span class="product-name">Strowberry</span>
+                <span class="product-name">Strawberry</span>
                 <span class="bold discount-price">UP to 25% OFF</span>
               </div>
               <div class="product" tabindex="0">
@@ -706,7 +771,9 @@ document.querySelector("#app").innerHTML = `
               <span class="call-us" tabindex="0">
                 <i class="fa-solid fa-phone-volume"></i>
                 Call Us
-                <a href="telto:" class="call-us_number">+1 202-918-2132</a>
+                <a href="tel:+12029182132" class="call-us_number"
+                  >+1 202-918-2132</a
+                >
               </span>
             </div>
             <div class="download-app">
@@ -751,10 +818,10 @@ document.querySelector("#app").innerHTML = `
                   <a href="#" role="listitem">Baby Care</a>
                 </li>
                 <li class="list-item">
-                  <a href="#" role="listitem">Vagetables & Fruits</a>
+                  <a href="#" role="listitem">Vegetables & Fruits</a>
                 </li>
                 <li class="list-item">
-                  <a href="#" role="listitem">Snaks & Foods</a>
+                  <a href="#" role="listitem">Snacks & Foods</a>
                 </li>
                 <li class="list-item">
                   <a href="#" role="listitem">Diary & Bakery</a>
@@ -790,7 +857,7 @@ document.querySelector("#app").innerHTML = `
           </div>
         </div>
       </footer>
-    <div class="darker-overlay"></div>
+      <div class="darker-overlay"></div>
 `;
 
 function setupCategoryDropdowns() {

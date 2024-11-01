@@ -1,0 +1,164 @@
+@media only screen and (max-width: 1440px) {
+  .sidebar {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+  .nav_bottom .right .search-input .input {
+    width: 90%;
+  }
+  .brands .item {
+    column-gap: 1rem;
+  }
+  .wrapper,
+  .footer .wrapper {
+    width: 90%;
+  }
+  .footer .wrapper {
+    column-gap: 2%;
+  }
+  .footer .left,
+  .footer .right {
+    width: 49%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+  .sidebar {
+    width: 50vw;
+  }
+  .slider .prev-slide,
+  .slider .next-slide {
+    width: 50px;
+  }
+  .slide-title {
+    gap: 1rem;
+  }
+  .brands .item {
+    min-width: 150px;
+    column-gap: 1rem;
+  }
+  .brands .item .brand-logo {
+    width: 30px;
+  }
+  .footer .wrapper {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 10px;
+  }
+  .sidebar {
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar .sidebar-heading {
+    font-size: clamp(2rem, 8vw + 1rem, 4rem);
+  }
+  .sidebar-content .item > button {
+    font-size: 5vw;
+  }
+  .sidebar-content .item > a {
+    font-size: 4vw;
+  }
+  .nav .nav_top {
+    display: none;
+  }
+  .nav_bottom .right .search-input {
+    width: 100%;
+  }
+  .nav_bottom .right .sign-up_cart {
+    display: none;
+  }
+  .nav_bottom .right .search-input .magnifying-glass {
+    padding: 0;
+  }
+  .nav_bottom .right .search-input .magnifying-glass i {
+    color: var(--main-blue);
+  }
+  .header .categories .category-content {
+    width: 100px;
+  }
+  .slider {
+    background-size: cover;
+  }
+  .slider .slide {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .slider-content,
+  .slider .slide .slide-title {
+    flex-wrap: wrap;
+  }
+  .slider .slide .slide-title {
+    gap: 1rem;
+    min-width: 200px;
+  }
+  .sm-sc .phone {
+    width: calc(50% - 10px);
+    min-width: 100px;
+  }
+
+  .electronics-wrapper .brands {
+    gap: 0;
+    row-gap: 10px;
+  }
+  .electronics-sc div:is(.brands1, .brands2) {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .brands .item {
+    max-width: 100%;
+    width: calc(100% - 10px);
+    column-gap: 2rem;
+  }
+  .brands .item .phone-image {
+    max-width: 150px;
+    width: fit-content;
+  }
+  .brands .item .brand-logo {
+    width: 40px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .sm-sc .phone {
+    width: 80%;
+    min-width: 100px;
+  }
+  .electronics-wrapper .brands {
+    gap: 10px;
+  }
+  .electronics-wrapper .brands div:is(.brands1, .brands2) {
+    width: 90%;
+    gap: 0;
+    row-gap: 1rem;
+  }
+  .brands .item {
+    width: 100%;
+  }
+  .footer .left,
+  .footer .right {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  .footer .left .download-buttons {
+    flex-wrap: wrap;
+  }
+}
